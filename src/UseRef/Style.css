@@ -1,0 +1,17 @@
+*{
+    background-color: palegreen;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+#sty{
+    background-color: orange;
+    text-align: center;
+}
+#sty>h1{
+    text-align: center;   
+}
+
+#sty>ul{
+    list-style-type: none;
+}
