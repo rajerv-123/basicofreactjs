@@ -1,40 +1,32 @@
-import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
-import axios from "axios";
+import React, { useEffect, useState } from "react";
+
 function DataFetch() {
-  const [mappedData, setMappedData] = useState();
+  const [apiData, setApiData] = useState();
 
   useEffect(() => {
-    async function fetchData() {
-      try {
-        const url = `https://jsonplaceholder.typicode.com/posts`;
-        const response = await fetch(url);
-        // By using axios
-        // const response = await axios.get(url);
-
-        if (!response.ok) {
-          throw new Error("Failed to fetch data");
-        }
-        const data = await response.json();
-        // const data = response.data;
-        console.log(data);
-        setMappedData(data);
-      } catch (error) {
-        console.log("error fetching");
-      }
-    }
     fetchData();
   }, []);
-
+  async function fetchData() {
+    try {
+      const url = `https://jsonplaceholder.typicode.com/posts`;
+      const response = await fetch(url);
+      const data = await response.json();
+      console.log(data);
+      setApiData(data);
+    } catch {
+      console.log("error fetching data");
+    }
+  }
   return (
     <div>
-      {mappedData?.map((data) => (
-        <ul key={data.id}>
-          <li>User Id{data?.userId}</li>
-          <li>Body{data?.body}</li>
-          <li>Title{data?.title}</li>
-        </ul>
+      {apiData?.map((data) => (
+        <div key={data.id}>
+          <ol>
+            <li>title is : {data?.title}</li>
+            <li>body is : {data?.body}</li>
+            <li>User Id : {data?.userId}</li>
+          </ol>
+        </div>
       ))}
     </div>
   );
