@@ -9,6 +9,11 @@
 
 import React, { useState, Suspense } from "react";
 import DataFetch from "./AsyncAwait/DataFetch";
+import ContextState from "./UseContext/ContextState";
+import Home from "./UseContext/Home";
+import Home2 from "./UseContext/Home2";
+import Home3 from "./UseContext/Home3";
+import Home4 from "./UseContext/Home4";
 
 const MyComponent = React.lazy(() => import("./Optimization/MyComponent"));
 
@@ -22,25 +27,32 @@ const MyComponent = React.lazy(() => import("./Optimization/MyComponent"));
 function App() {
   const [count, setCount] = useState(0);
   return (
-    <div>
-      {/* <Ref></Ref> */}
-      {/* <ParentComponent></ParentComponent> */}
-      {/* <UserGreeting/> */}
-      {/* <NameList/> */}
-      {/* <State></State> */}
-      {/* <FormHandlin/> */}
-      {/* <LifeCycleA/>
+    <ContextState>
+      <div>
+        <Home />
+        <Home2 />
+        <Home3 />
+        <Home4 />
+
+        {/* <Ref></Ref> */}
+        {/* <ParentComponent></ParentComponent> */}
+        {/* <UserGreeting/> */}
+        {/* <NameList/> */}
+        {/* <State></State> */}
+        {/* <FormHandlin/> */}
+        {/* <LifeCycleA/>
       <LifeCycleB></LifeCycleB> */}
-      {/* <Fragment/> */}
-      {/* <Table/> */}
-      {/* <PureComponents/> */}
-      {/* <ParentComponent/> */}
-      {/* <DataFetch /> */}
-      <Suspense fallback={<p>this is loading....</p>}>
-        <MyComponent state={count} />
-      </Suspense>
-      <button onClick={() => setCount((v) => v + 1)}>Increment</button>
-    </div>
+        {/* <Fragment/> */}
+        {/* <Table/> */}
+        {/* <PureComponents/> */}
+        {/* <ParentComponent/> */}
+        {/* <DataFetch /> */}
+        <Suspense fallback={<p>this is loading....</p>}>
+          <MyComponent state={count} />
+        </Suspense>
+        <button onClick={() => setCount((v) => v + 1)}>Increment</button>
+      </div>
+    </ContextState>
   );
 }
 export default App;
