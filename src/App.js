@@ -14,6 +14,7 @@ import Home from "./UseContext/Home";
 import Home2 from "./UseContext/Home2";
 import Home3 from "./UseContext/Home3";
 import Home4 from "./UseContext/Home4";
+import Todo from "./TODOList/TodoList";
 
 const MyComponent = React.lazy(() => import("./Optimization/MyComponent"));
 const DataFetchComponent = React.lazy(() => import("./AsyncAwait/DataFetch"));
@@ -47,7 +48,7 @@ function App() {
         {/* <Table/> */}
         {/* <PureComponents/> */}
         {/* <ParentComponent/> */}
-        <Suspense
+        {/* <Suspense
           fallback={
             <h1>
               Loading......................................................
@@ -56,12 +57,13 @@ function App() {
         >
           {" "}
           <DataFetchComponent />
-        </Suspense>
+        </Suspense> */}
         {/* 
         <Suspense fallback={<p>this is loading....</p>}>
           <MyComponent state={count} />
         </Suspense> */}
-        <button onClick={() => setCount((v) => v + 1)}>Increment</button>
+        {/* <button onClick={() => setCount((v) => v + 1)}>Increment</button> */}
+        <Todo/>
       </div>
     </ContextState>
   );
