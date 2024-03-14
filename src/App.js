@@ -17,6 +17,11 @@ import Home4 from "./UseContext/Home4";
 import Todo from "./TODOList/TodoList";
 import DataFetchs from "./InterviewPractice/FetchData/DataFetch";
 import IncrementDecrementByUseState from "./InterviewPractice/02/IncrementDecrementByUseState";
+import StateInClassBC from "./InterviewPractice/03/StateInClassBC";
+import PropsInReact from "./InterviewPractice/04/PropsInReact";
+import ChildComponent from "./InterviewPractice/04/ChildComponent";
+import Mapping from "./InterviewPractice/05/Mapping";
+import InputFields from "./InterviewPractice/06/InputFields";
 
 const MyComponent = React.lazy(() => import("./Optimization/MyComponent"));
 const DataFetchComponent = React.lazy(() => import("./AsyncAwait/DataFetch"));
@@ -27,7 +32,12 @@ function App() {
     <ContextState>
       <div>
         {/* <DataFetchs /> */}
-        <IncrementDecrementByUseState />
+        {/* <IncrementDecrementByUseState /> */}
+        {/* <StateInClassBC/> */}
+        {/* <PropsInReact />
+        <ChildComponent /> */}
+        {/* <Mapping/> */}
+        <InputFields/>
         {/* <Home />
         <Home2 />
         <Home3 /> */}
