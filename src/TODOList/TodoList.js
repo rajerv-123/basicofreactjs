@@ -1,4 +1,3 @@
-// import "./styles.css";
 import { useState } from "react";
 
 export default function Todo() {
@@ -18,7 +17,7 @@ export default function Todo() {
   return (
     <div className="App">
       <div>
-        <input type="text" value={forinput} onChange={handleAddOneInput} />
+        <input type="text" value={forinput} placeholder="enter your name" onChange={handleAddOneInput} />
         <button onClick={handleSubmit}>Submit</button>
         <ul>
           {taksh.map((task, index) => {

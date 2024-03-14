@@ -15,40 +15,24 @@ import Home2 from "./UseContext/Home2";
 import Home3 from "./UseContext/Home3";
 import Home4 from "./UseContext/Home4";
 import Todo from "./TODOList/TodoList";
+import DataFetchs from "./InterviewPractice/FetchData/DataFetch";
+import IncrementDecrementByUseState from "./InterviewPractice/02/IncrementDecrementByUseState";
 
 const MyComponent = React.lazy(() => import("./Optimization/MyComponent"));
 const DataFetchComponent = React.lazy(() => import("./AsyncAwait/DataFetch"));
 
-// import ParentComponent from "./PureComponents/ParentComponent";
-
-//import PureComponents from "./PureComponents/PureComponents";
-
-//import  Table  from "./ReactFragments/Table";
-
-//import FormHandlin from "./FormHandling/FormHandlin";
 function App() {
   const [count, setCount] = useState(0);
   return (
     <ContextState>
       <div>
-        <Home />
+        {/* <DataFetchs /> */}
+        <IncrementDecrementByUseState />
+        {/* <Home />
         <Home2 />
-        <Home3 />
-        <Home4 />
+        <Home3 /> */}
 
-        {/* <Ref></Ref> */}
-        {/* <ParentComponent></ParentComponent> */}
-        {/* <UserGreeting/> */}
-        {/* <NameList/> */}
-        {/* <State></State> */}
-        {/* <FormHandlin/> */}
-        {/* <LifeCycleA/>
-      <LifeCycleB></LifeCycleB> */}
-        {/* <Fragment/> */}
-        {/* <Table/> */}
-        {/* <PureComponents/> */}
-        {/* <ParentComponent/> */}
-        {/* <Suspense
+        <Suspense
           fallback={
             <h1>
               Loading......................................................
@@ -57,13 +41,13 @@ function App() {
         >
           {" "}
           <DataFetchComponent />
-        </Suspense> */}
+        </Suspense>
         {/* 
         <Suspense fallback={<p>this is loading....</p>}>
           <MyComponent state={count} />
         </Suspense> */}
         {/* <button onClick={() => setCount((v) => v + 1)}>Increment</button> */}
-        <Todo/>
+        {/* <Todo /> */}
       </div>
     </ContextState>
   );
