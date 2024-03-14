@@ -6,14 +6,14 @@ const InputFields = () => {
   const [data, setData] = useState([]);
 
   const getInput = (value, name) => {
-    const data = { [name]: value };
-    setObjData({ ...objData, ...data });
+    const newData = { [name]: value };
+    setObjData({ ...objData, ...newData });
   };
 
   const submit = (event) => {
     event.preventDefault();
     setData([...data, objData]);
-    setObjData("");
+    setObjData({}); // Clear objData after submitting
   };
 
   return (
@@ -24,20 +24,22 @@ const InputFields = () => {
             type="text"
             name="name"
             placeholder="Write your name"
-            onChange={(event) => getInput(event.target.value, "name")}
+            onChange={(event) =>
+              getInput(event.target.value, event.target.name)
+            }
           />
           <input
             type="number"
             name="age"
             placeholder="Age"
             onChange={(event) =>
-              getInput(event.target.value, "event.target.name")
+              getInput(event.target.value, event.target.name)
             }
           />
           <input
             type="text"
             name="hobbies"
-            placeholder="hobbies"
+            placeholder="Hobbies"
             onChange={(event) =>
               getInput(event.target.value, event.target.name)
             }
@@ -45,7 +47,7 @@ const InputFields = () => {
           <input
             type="date"
             name="Date"
-            placeholder="write a date"
+            placeholder="Write a date"
             onChange={(event) =>
               getInput(event.target.value, event.target.name)
             }
