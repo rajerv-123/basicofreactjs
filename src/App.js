@@ -22,6 +22,8 @@ import PropsInReact from "./InterviewPractice/04/PropsInReact";
 import ChildComponent from "./InterviewPractice/04/ChildComponent";
 import Mapping from "./InterviewPractice/05/Mapping";
 import InputFields from "./InterviewPractice/06/InputFields";
+import DynamicInputs from "./InterviewPractice/07/DynamicInputs";
+import DifferentTypeOfCss from "./InterviewPractice/08/DifferentTypeOfCss";
 
 const MyComponent = React.lazy(() => import("./Optimization/MyComponent"));
 const DataFetchComponent = React.lazy(() => import("./AsyncAwait/DataFetch"));
@@ -37,7 +39,9 @@ function App() {
         {/* <PropsInReact />
         <ChildComponent /> */}
         {/* <Mapping/> */}
-        <InputFields/>
+        {/* <InputFields/> */}
+        {/* <DynamicInputs/> */}
+        <DifferentTypeOfCss/>
         {/* <Home />
         <Home2 />
         <Home3 /> */}

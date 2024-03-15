@@ -13,7 +13,7 @@ const InputFields = () => {
   const submit = (event) => {
     event.preventDefault();
     setData([...data, objData]);
-    setObjData({}); // Clear objData after submitting
+    setObjData({});
   };
 
   return (
