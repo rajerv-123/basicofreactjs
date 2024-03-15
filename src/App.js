@@ -1,71 +1,55 @@
-//import ParentComponent from "./Props/ParentComponent";
-//import NameList from "./ListRendring/NameList";
-//import UserGreeting from "./ConditionalRendering/UserGreeting";
-//import State from "./UseState/State";
-//import Ref from './UseRef/Ref';
-//import Fragment  from "./ReactFragments/Fragment";
-//import LifeCycleA from "./ComponentMounting/LifeCycleA";
-//import LifeCycleB from "./ComponentMounting/LifeCycleB";
-
 import React, { useState, Suspense } from "react";
-import DataFetch from "./AsyncAwait/DataFetch";
-import ContextState from "./UseContext/ContextState";
-import Home from "./UseContext/Home";
-import Home2 from "./UseContext/Home2";
-import Home3 from "./UseContext/Home3";
-import Home4 from "./UseContext/Home4";
-import Todo from "./TODOList/TodoList";
-import DataFetchs from "./InterviewPractice/FetchData/DataFetch";
-import IncrementDecrementByUseState from "./InterviewPractice/02/IncrementDecrementByUseState";
-import StateInClassBC from "./InterviewPractice/03/StateInClassBC";
-import PropsInReact from "./InterviewPractice/04/PropsInReact";
-import ChildComponent from "./InterviewPractice/04/ChildComponent";
-import Mapping from "./InterviewPractice/05/Mapping";
-import InputFields from "./InterviewPractice/06/InputFields";
-import DynamicInputs from "./InterviewPractice/07/DynamicInputs";
-import DifferentTypeOfCss from "./InterviewPractice/08/DifferentTypeOfCss";
-import Axious from "./InterviewPractice/09/Axious";
-
+import { contextState } from "./InterviewPractice/10/CreateContext";
+import ContextAPI from "./InterviewPractice/10/ContextAPI";
+import HOC from "./InterviewPractice/11HOC/HOC";
+import HOC2 from "./InterviewPractice/11HOC/HOC2";
 const MyComponent = React.lazy(() => import("./Optimization/MyComponent"));
 const DataFetchComponent = React.lazy(() => import("./AsyncAwait/DataFetch"));
 
 function App() {
+  const [name, setName] = useState("Rajeev");
   const [count, setCount] = useState(0);
   return (
-    <ContextState>
-      <div>
-        {/* <DataFetchs /> */}
-        {/* <IncrementDecrementByUseState /> */}
-        {/* <StateInClassBC/> */}
-        {/* <PropsInReact />
+    // <ContextState>
+    // <contextState.Provider value={{ name, setName ,data:"my Data"}}>
+    <div>
+      {/* <DataFetchs /> */}
+      {/* <IncrementDecrementByUseState /> */}
+      {/* <StateInClassBC/> */}
+      {/* <PropsInReact />
         <ChildComponent /> */}
-        {/* <Mapping/> */}
-        {/* <InputFields/> */}
-        {/* <DynamicInputs/> */}
-        {/* <DifferentTypeOfCss/> */}
-        <Axious />
-        {/* <Home />
+      {/* <Mapping/> */}
+      {/* <InputFields/> */}
+      {/* <DynamicInputs/> */}
+      {/* <DifferentTypeOfCss/> */}
+      {/* <Axious /> */}
+      {/* <ContextAPI /> */}
+      <HOC />
+      <HOC2 />
+
+      {/* <Home />
+
         <Home2 />
         <Home3 /> */}
 
-        <Suspense
-          fallback={
-            <h1>
-              Loading......................................................
-            </h1>
-          }
-        >
-          {" "}
-          <DataFetchComponent />
-        </Suspense>
-        {/* 
+      <Suspense
+        fallback={
+          <h1>Loading......................................................</h1>
+        }
+      >
+        {" "}
+        <DataFetchComponent />
+      </Suspense>
+      {/* 
         <Suspense fallback={<p>this is loading....</p>}>
           <MyComponent state={count} />
         </Suspense> */}
-        {/* <button onClick={() => setCount((v) => v + 1)}>Increment</button> */}
-        {/* <Todo /> */}
-      </div>
-    </ContextState>
+      {/* <button onClick={() => setCount((v) => v + 1)}>Increment</button> */}
+      {/* <Todo /> */}
+    </div>
+    // </contextState.Provider>
+
+    // </ContextState>
   );
 }
 export default App;
