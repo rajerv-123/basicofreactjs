@@ -24,6 +24,7 @@ import Mapping from "./InterviewPractice/05/Mapping";
 import InputFields from "./InterviewPractice/06/InputFields";
 import DynamicInputs from "./InterviewPractice/07/DynamicInputs";
 import DifferentTypeOfCss from "./InterviewPractice/08/DifferentTypeOfCss";
+import Axious from "./InterviewPractice/09/Axious";
 
 const MyComponent = React.lazy(() => import("./Optimization/MyComponent"));
 const DataFetchComponent = React.lazy(() => import("./AsyncAwait/DataFetch"));
@@ -41,7 +42,8 @@ function App() {
         {/* <Mapping/> */}
         {/* <InputFields/> */}
         {/* <DynamicInputs/> */}
-        <DifferentTypeOfCss/>
+        {/* <DifferentTypeOfCss/> */}
+        <Axious />
         {/* <Home />
         <Home2 />
         <Home3 /> */}

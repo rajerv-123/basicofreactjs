@@ -16,12 +16,10 @@ const styles = {
 };
 
 const DifferentTypeOfCss = () => {
-
   const [theme, setTheme] = useState(false);
   const toggleThese = () => {
     setTheme(!theme);
   };
-
 
   return (
     <div style={theme ? styles.light : styles.dark}>
