@@ -3,6 +3,10 @@ import { contextState } from "./InterviewPractice/10/CreateContext";
 import ContextAPI from "./InterviewPractice/10/ContextAPI";
 import HOC from "./InterviewPractice/11HOC/HOC";
 import HOC2 from "./InterviewPractice/11HOC/HOC2";
+import UsingHelperfunction from "./InterviewPractice/12-Helper-Function/UsingHelperfunction";
+import ArrayProblem from "./InterviewPractice/ArrayProblem/ArrayProblem";
+import ConstomHookUsing from "./InterviewPractice/CustomHook/ConstomHookUsing";
+import SearchFilter from "./InterviewPractice/14-Search-filter/SearchFilter";
 const MyComponent = React.lazy(() => import("./Optimization/MyComponent"));
 const DataFetchComponent = React.lazy(() => import("./AsyncAwait/DataFetch"));
 
@@ -24,8 +28,12 @@ function App() {
       {/* <DifferentTypeOfCss/> */}
       {/* <Axious /> */}
       {/* <ContextAPI /> */}
-      <HOC />
-      <HOC2 />
+      {/* <HOC />
+      <HOC2 /> */}
+      {/* <UsingHelperfunction /> */}
+      {/* <ArrayProblem /> */}
+      {/* <ConstomHookUsing/> */}
+      <SearchFilter />
 
       {/* <Home />
 

@@ -77,7 +77,7 @@ const Axious = () => {
       <div>
         <input placeholder="name" onChange={(e) => setData(e.target.value)} />
         <button onClick={postData}>Post Data</button>
- 
+
         <div>
           {showData.map((data, index) => {
             return (
