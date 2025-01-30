@@ -1,30 +1,30 @@
 import { useState } from "react";
 
 export default function Todo() {
-  const [taksh, setTaksh] = useState([]);
+  const [inputText, setInputText] = useState([]);
+  const [data, setData] = useState("");
 
-  const [forinput, setForinput] = useState("");
+  const handleInput = (e) => {
+    setInputText(e.trget.value);
+  };
 
-  function handleAddOneInput(e) {
-    setForinput(e.target.value);
-  }
-
-  function handleSubmit() {
-    setTaksh([...taksh, forinput]);
-    setForinput("");
-  }
+  const handleClick = () => {
+    setInputText([...inputText, data]);
+    setData("");
+  };
 
   return (
     <div className="App">
-      <div>
-        <input type="text" value={forinput} placeholder="enter your name" onChange={handleAddOneInput} />
-        <button onClick={handleSubmit}>Submit</button>
-        <ul>
-          {taksh.map((task, index) => {
-            return <li key={index}>{task}</li>;
-          })}
-        </ul>
-      </div>
+      <label htmlFor="">Enter somthing </label>
+      <input type="text" onChange={handleInput} value={data} />
+
+      <button onClick={handleClick}>Click Me</button>
+
+      <ul>
+        {inputText.map((value, index) => (
+          <li key={index}>{value}</li>
+        ))}
+      </ul>
     </div>
   );
 }

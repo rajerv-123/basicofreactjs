@@ -1,69 +1,67 @@
 import React, { useState } from "react";
-import "./InputField.css";
 
-const InputFields = () => {
-  const [objData, setObjData] = useState({});
+const InputField1 = () => {
+  const [inputField, setInputField] = useState({});
   const [data, setData] = useState([]);
 
   const getInput = (value, name) => {
     const newData = { [name]: value };
-    setObjData({ ...objData, ...newData });
-  };
-  
-  const submit = (event) => {
-    event.preventDefault();
-    setData([...data, objData]);
-    setObjData({});
+    setInputField({ ...inputField, ...newData });
   };
 
+  const submit = (e) => {
+    e.preventDefault();
+    setData([...data, inputField]);
+    setInputField({});
+  };
+  
   return (
     <div>
       <form onSubmit={submit}>
-        <div className="form">
+        <div>
           <input
             type="text"
+            placeholder="Enter your name"
             name="name"
-            placeholder="Write your name"
+            onChange={(event) =>
+              getInput(event.target.value, event.target.name)
+            }
+          />
+          <input
+            type="text"
+            placeholder="enter your address"
+            name="address"
             onChange={(event) =>
               getInput(event.target.value, event.target.name)
             }
           />
           <input
             type="number"
+            placeholder="enter your age"
             name="age"
-            placeholder="Age"
-            onChange={(event) =>
-              getInput(event.target.value, event.target.name)
-            }
-          />
-          <input
-            type="text"
-            name="hobbies"
-            placeholder="Hobbies"
             onChange={(event) =>
               getInput(event.target.value, event.target.name)
             }
           />
           <input
             type="date"
-            name="Date"
-            placeholder="Write a date"
+            placeholder="Your Skills"
+            name="skill"
             onChange={(event) =>
               getInput(event.target.value, event.target.name)
             }
           />
-          <button type="submit" className="form-button">
-            Submit
-          </button>
+          <button type="submit">Submit</button>
         </div>
       </form>
+
       <div>
-        {data.map((item, index) => (
+        {data.map((value, index) => (
           <ul key={index}>
-            <li>Name: {item.name}</li>
-            <li>Age: {item.age}</li>
-            <li>Hobbies: {item.hobbies}</li>
-            <li>Date: {item.Date}</li>
+            <li>{value.name}</li>
+            <li>{value.age}</li>
+            <li>{value.address}</li>
+            <li>{value.skill}</li>
           </ul>
         ))}
       </div>
@@ -71,4 +69,4 @@ const InputFields = () => {
   );
 };
 
-export default InputFields;
+export default InputField1;
